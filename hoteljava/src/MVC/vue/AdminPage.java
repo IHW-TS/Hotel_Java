@@ -19,7 +19,7 @@ public class AdminPage extends JFrame implements ActionListener {
 	private JPanel mainPanel = new JPanel();
 
 	private JButton ModifyClient = new JButton("Mettre à jour les Clients");
-	private JButton VoirReserv = new JButton("Liste Réservation");
+	private JButton CheckChambre = new JButton("Liste Réservation");
 	private JButton CheckReserv = new JButton("Réservation");
 	private JButton btnLogout = new JButton("Logout");
 
@@ -40,9 +40,9 @@ public class AdminPage extends JFrame implements ActionListener {
 		ModifyClient.setFont(myFont);
 		ModifyClient.setForeground(Color.black);
 		ModifyClient.setBackground(Color.white);
-		VoirReserv.setFont(myFont);
-		VoirReserv.setForeground(Color.black);
-		VoirReserv.setBackground(Color.white);
+		CheckChambre.setFont(myFont);
+		CheckChambre.setForeground(Color.black);
+		CheckChambre.setBackground(Color.white);
 		CheckReserv.setFont(myFont);
 		CheckReserv.setForeground(Color.black);
 		CheckReserv.setBackground(Color.white);
@@ -55,17 +55,17 @@ public class AdminPage extends JFrame implements ActionListener {
 
 		mainPanel.setLayout(null);
 
-		mainPanel.add(VoirReserv);
+		mainPanel.add(CheckChambre);
 		mainPanel.add(CheckReserv);
 		mainPanel.add(ModifyClient);
 		mainPanel.add(btnLogout);
 
-		VoirReserv.setBounds(270, 140, 250, 50);
+		CheckChambre.setBounds(270, 140, 250, 50);
 		CheckReserv.setBounds(270, 220, 250, 50);
 		ModifyClient.setBounds(270, 300, 250, 50);
 		btnLogout.setBounds(270, 380, 250, 50);
 
-		VoirReserv.addActionListener(this);
+		CheckChambre.addActionListener(this);
 		CheckReserv.addActionListener(this);
 		ModifyClient.addActionListener(this);
 		btnLogout.addActionListener(this);
@@ -77,11 +77,14 @@ public class AdminPage extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 
 		if (e.getSource() == ModifyClient) {
-			new AdminRes();
+			new AdminClient();
+
 		} else if (e.getSource() == CheckReserv) {
-			
-		} else if (e.getSource() == VoirReserv) {
-	
+			new AdminRes();
+
+		} else if (e.getSource() == CheckChambre) {
+
+			new AdminChambre();
 
 		} else if (e.getSource() == btnLogout) {
 			JOptionPane.showMessageDialog(AdminPage.this,

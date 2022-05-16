@@ -9,6 +9,20 @@
             "name": "Launch AdminRes",
             "request": "launch",
             "mainClass": "MVC.vue.AdminRes",
+            "projectName": "hoteljava_4e803e62"
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "hoteljava_4e803e62"
+        },
+        {
+            "type": "java",
+            "name": "Launch AdminRes",
+            "request": "launch",
+            "mainClass": "MVC.vue.AdminRes",
             "projectName": "hoteljava_46c3967c"
         },
         {

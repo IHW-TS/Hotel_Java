@@ -6,15 +6,15 @@ import java.util.*;
 import javax.swing.*;
 import javax.swing.table.*;
 
-import MVC.model.Reservation;
+import MVC.model.Client;
 
-public class AdminRes extends JFrame {
-
+public class AdminClient {
+    
     private GchambreStatique modele = new GchambreStatique();
     private JTable tableau;
     JPanel boutons = new JPanel();
 
-    public AdminRes() {
+    public AdminClient() {
         this.setTitle("Réservation de la chambre");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -57,5 +57,4 @@ public class AdminRes extends JFrame {
             }
         }
     }
-
 }

@@ -38,13 +38,13 @@ public class GchambreStatique extends AbstractTableModel{
     public Object getValueAt(int rowIndex, int columnIndex) {
         switch(columnIndex){
             case 0:
-               return reservations.get(rowIndex).getPrenom();
+              // return reservations.get(rowIndex).getPrenom();
             case 1:
-               return reservations.get(rowIndex).getNom();
+              // return reservations.get(rowIndex).getNom();
             case 2:
-               return reservations.get(rowIndex).getTypeChambre();
+              // return reservations.get(rowIndex).getTypeChambre();
             case 3:
-               return reservations.get(rowIndex).getDateA();
+              // return reservations.get(rowIndex).getDateA();
             default:
                 return null; //Ne devrait jamais arriver
         }

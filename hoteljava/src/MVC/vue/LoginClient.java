@@ -68,7 +68,7 @@ public class LoginClient extends JFrame implements ActionListener {
 		if (e.getSource() == BtnLog) {
 			try {
 
-				ClientUser myStaff = new ClientUser();
+				ClientUser cClient = new ClientUser();
 
 				String username = usernameInput.getText();
 
@@ -78,9 +78,9 @@ public class LoginClient extends JFrame implements ActionListener {
 
 				BufferedReader bufferedReader = new BufferedReader(fileReader);
 
-				myStaff.setStaffKeyInUsername(username);
-				myStaff.setStaffKeyInPassword(password);
-				myStaff.loginProcess();
+				cClient.setStaffKeyInUsername(username);
+				cClient.setStaffKeyInPassword(password);
+				cClient.loginProcess();
 				dispose();
 
 				bufferedReader.close();

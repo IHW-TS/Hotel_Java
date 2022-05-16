@@ -12,9 +12,9 @@ public class App {
 		
 		//new HotelRes();
 		//new ClientRes();
-	new AdminPage();
+	//new AdminPage();
 	
-		//new PageAccueil();
+		new PageAccueil();
 		//Admin myAdmin = new Admin();
 		//Client myClient = new Client();
 		
