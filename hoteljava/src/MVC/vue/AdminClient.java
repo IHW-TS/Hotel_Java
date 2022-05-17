@@ -1,60 +1,75 @@
 package MVC.vue;
 
-import java.awt.*;
-import java.awt.event.*;
-import java.util.*;
-import javax.swing.*;
-import javax.swing.table.*;
+import java.awt.Color;
+import java.awt.Font;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
+
+import MVC.controller.AdminClientController;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JButton;
 
 import MVC.model.Client;
 
-public class AdminClient {
-    
-    private GchambreStatique modele = new GchambreStatique();
-    private JTable tableau;
-    JPanel boutons = new JPanel();
+public class AdminClient extends JFrame {
 
-    public AdminClient() {
-        this.setTitle("Réservation de la chambre");
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+  private JPanel contentPanel;
+  private Font mainLabel;
+  private AdminClientController controller;
+  private JTable table;
 
-        tableau = new JTable(modele);
-        this.getContentPane().add(new JScrollPane(tableau), BorderLayout.CENTER);
+  public AdminClient() {
+    mainLabel = new Font("Arial", Font.BOLD, 34);
+    controller = new AdminClientController(this);
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    setBounds(100, 100, 590, 387);
+    setLocationRelativeTo(null);
+    contentPanel = new JPanel();
+    contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+    setContentPane(contentPanel);
+    contentPanel.setLayout(null);
 
-        boutons.add(new JButton(new AddAction()));
-        boutons.add(new JButton(new RemoveAction()));
+    JLabel csDetails = new JLabel("Details Client");
+    csDetails.setFont(mainLabel);
+    csDetails.setForeground(Color.WHITE);
+    csDetails.setBounds(150, 5, 300, 30);
+    contentPanel.add(csDetails);
 
-        this.getContentPane().add(boutons, BorderLayout.SOUTH);
+    JScrollPane scrollPane = new JScrollPane();
+    scrollPane.setBounds(30, 40, 530, 263);
+    contentPanel.add(scrollPane);
 
-        this.pack();
-    }
+    table = new JTable();
+    table.setModel(new DefaultTableModel(new Object[][] {},
+    new String[] { "ID", "Nom", "Numero", "Date Début", "Durée" }));
+    scrollPane.setViewportView(table);
+    controller.setTabel();
 
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
-        new AdminRes().setVisible(true);
-    }
+    JButton mainMenu = new JButton("Page Accueil");
+    mainMenu.setBounds(223, 315, 117, 25);
+    contentPanel.add(mainMenu);
+/*
+    JLabel background = new JLabel("");
+    background.setIcon(new ImageIcon("all.jpg"));
+    background.setBounds(0, 0, 605, 354);
+    contentPanel.add(background);
+*/
+    mainMenu.addActionListener(controller);
+  }
 
-    private class AddAction extends AbstractAction {
-        private AddAction() {
-            super("Ajouter");
-        }
+  public void setTable() {
+    table.setModel(new DefaultTableModel(new Object[][] {},
+        new String[] { "ID No", "Name", "Phone No", "Duration", "No of Peoples" }));
+  }
 
-        public void actionPerformed(ActionEvent e) {
-            modele.addReserv(new Reservation("", "", "",""));
-        }
-    }
+  public JTable getTable() {
+    return table;
+  }
 
-    private class RemoveAction extends AbstractAction {
-        private RemoveAction() {
-            super("Supprimer");
-        }
-
-        public void actionPerformed(ActionEvent e) {
-            int[] selection = tableau.getSelectedRows();
-
-            for (int i = selection.length - 1; i >= 0; i--) {
-                modele.removeReserv(selection[i]);
-            }
-        }
-    }
 }

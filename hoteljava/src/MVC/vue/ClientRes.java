@@ -153,13 +153,13 @@ public class ClientRes extends JFrame {
 		lastNameField.setBounds(380, 10, 150, 30);
 		p2.add(lastNameField);
 
-		JLabel cnoLabel = new JLabel("Numero :");
-		cnoLabel.setBounds(10, 45, 250, 30);
-		p2.add(cnoLabel);
+		JLabel numLabel = new JLabel("Numero :");
+		numLabel.setBounds(10, 45, 250, 30);
+		p2.add(numLabel);
 
-		JTextField cnoField = new JTextField();
-		cnoField.setBounds(110, 45, 150, 30);
-		p2.add(cnoField);
+		JTextField numField = new JTextField();
+		numField.setBounds(110, 45, 150, 30);
+		p2.add(numField);
 
 		JLabel ageLabel = new JLabel("Age:");
 		ageLabel.setBounds(280, 45, 250, 30);
@@ -172,22 +172,31 @@ public class ClientRes extends JFrame {
 		JLabel addressLabel = new JLabel("Adresse:");
 		addressLabel.setBounds(10, 80, 250, 30);
 		p2.add(addressLabel);
-		JTextArea addressTextArea = new JTextArea();
+		JTextArea addressTexteChamps = new JTextArea();
 
 		// partie Adresse + option pour scroller
-		addressTextArea.setLineWrap(true);
-		addressTextArea.setWrapStyleWord(true);
-		JScrollPane scrollableTextArea = new JScrollPane(addressTextArea);
-		scrollableTextArea.setBounds(110, 80, 150, 65);
-		scrollableTextArea.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-		p2.add(scrollableTextArea);
+		addressTexteChamps.setLineWrap(true);
+		addressTexteChamps.setWrapStyleWord(true);
+		JScrollPane scrollTexteChamps = new JScrollPane(addressTexteChamps);
+		scrollTexteChamps.setBounds(110, 80, 150, 65);
+		scrollTexteChamps.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+		p2.add(scrollTexteChamps);
 
 		JLabel GenderLabel = new JLabel("Genre :");
 		GenderLabel.setBounds(10, 150, 250, 30);
 		p2.add(GenderLabel);
 
 		// Creation d'un choix de bouton pour le genre
-		JRadioButton genre1 = new JRadioButton("Homme");
+		
+		JComboBox Genre = new JComboBox();
+		Genre.addItem("Homme");
+		Genre.addItem("Femme");
+		Genre.addItem("Autre");
+		Genre.setSelectedItem(1);
+		Genre.setBounds(110, 150, 120, 30);
+				p2.add(Genre);
+		
+		/*JRadioButton genre1 = new JRadioButton("Homme");
 		JRadioButton genre2 = new JRadioButton("Femme");
 		JRadioButton genre3 = new JRadioButton("Autre");
 		genre1.setBounds(60, 150, 250, 30);
@@ -200,7 +209,7 @@ public class ClientRes extends JFrame {
 		p2.add(genre1);
 		p2.add(genre2);
 		p2.add(genre3);
-
+*/
 		JButton prevBtn2 = new JButton("Back");
 		prevBtn2.setBounds(320, 220, 100, 30);
 		p2.add(prevBtn2);
@@ -265,11 +274,11 @@ public class ClientRes extends JFrame {
 		totalLabelServiveQuantite.setBounds(180, 80, 250, 30);
 		p3.add(totalLabelServiveQuantite);
 
-		JLabel taxLabelQuantite = new JLabel("-");
+		JLabel taxLabelQuantite = new JLabel("|");
 		taxLabelQuantite.setBounds(180, 100, 250, 30);
 		p3.add(taxLabelQuantite);
 
-		JLabel maintainenceLabelQuantite = new JLabel("-");
+		JLabel maintainenceLabelQuantite = new JLabel("|");
 		maintainenceLabelQuantite.setBounds(180, 120, 250, 30);
 		p3.add(maintainenceLabelQuantite);
 
@@ -280,7 +289,7 @@ public class ClientRes extends JFrame {
 		p3.add(itemPrixLabel);
 
 		JLabel rs1Label = new JLabel("€");
-		rs1Label.setBounds(250, 40, 250, 30);
+		rs1Label.setBounds(270, 40, 250, 30);
 		p3.add(rs1Label);
 
 		JLabel totalLabelChambrePrix = new JLabel("0");
@@ -288,7 +297,7 @@ public class ClientRes extends JFrame {
 		p3.add(totalLabelChambrePrix);
 
 		JLabel rs2Label = new JLabel("€");
-		rs2Label.setBounds(250, 60, 250, 30);
+		rs2Label.setBounds(270, 60, 250, 30);
 		p3.add(rs2Label);
 
 		JLabel totalLabelJourPrix = new JLabel("0");
@@ -296,7 +305,7 @@ public class ClientRes extends JFrame {
 		p3.add(totalLabelJourPrix);
 
 		JLabel rs3Label = new JLabel("€");
-		rs3Label.setBounds(250, 80, 250, 30);
+		rs3Label.setBounds(270, 80, 250, 30);
 		p3.add(rs3Label);
 
 		JLabel totalLabelServivePrix = new JLabel("0");
@@ -304,7 +313,7 @@ public class ClientRes extends JFrame {
 		p3.add(totalLabelServivePrix);
 
 		JLabel rs4Label = new JLabel("€");
-		rs4Label.setBounds(250, 100, 250, 30);
+		rs4Label.setBounds(270, 100, 250, 30);
 		p3.add(rs4Label);
 
 		JLabel taxPrixLabel = new JLabel("400");
@@ -312,7 +321,7 @@ public class ClientRes extends JFrame {
 		p3.add(taxPrixLabel);
 
 		JLabel rs5Label = new JLabel("€");
-		rs5Label.setBounds(250, 120, 250, 30);
+		rs5Label.setBounds(270, 120, 250, 30);
 		p3.add(rs5Label);
 
 		JLabel maintainenceCostLabel = new JLabel("200");
@@ -320,7 +329,7 @@ public class ClientRes extends JFrame {
 		p3.add(maintainenceCostLabel);
 
 		JLabel rs6Label = new JLabel("€");
-		rs6Label.setBounds(250, 160, 250, 30);
+		rs6Label.setBounds(270, 160, 250, 30);
 		p3.add(rs6Label);
 
 		JLabel totalPrixLabel = new JLabel("0");
@@ -373,14 +382,14 @@ public class ClientRes extends JFrame {
 						* Integer.parseInt(ReservPrix);
 				totalLabelChambrePrix.setText(String.valueOf(totChambre));
 
-				// Mise à jour du coût total des jours en fonction du nombre de jours * 1500
-				// (car 1500 est le prix de la chambre)
-				int totJour = Integer.parseInt(totalLabelJourQuantite.getText()) * 1500;
+				// Mise à jour du coût total des jours en fonction du nombre de jours * 150
+				// (car 150 est le prix de la chambre)
+				int totJour = Integer.parseInt(totalLabelJourQuantite.getText()) * 150;
 				totalLabelJourPrix.setText(String.valueOf(totJour));
 
 				// Mise à jour du coût total des installations en fonction de la quantité
-				// d'installations * 500 (parce que 500 est le coût par installation)
-				int totInstal = Integer.parseInt(totalLabelServiveQuantite.getText()) * 500;
+				// d'installations * 50 (parce que 50 est le coût par installation)
+				int totInstal = Integer.parseInt(totalLabelServiveQuantite.getText()) * 50;
 				totalLabelServivePrix.setText(String.valueOf(totInstal));
 
 				// Enfin, mise à jour du coût de réservation final à la somme de tous les autres
@@ -415,8 +424,8 @@ public class ClientRes extends JFrame {
 			// Si tous les champs de ce panneau ne sont pas remplis, affiche la boîte de
 			// dialogue de message
 			if (firstNameField.getText().equals("") || lastNameField.getText().equals("")
-					|| cnoField.getText().equals("") || ageField.getText().equals("")
-					|| addressTextArea.getText().equals("") || genderbg.getSelection() == null) {
+					|| numField.getText().equals("") || ageField.getText().equals("")
+					|| addressTexteChamps.getText().equals("") || Genre.getSelectedItem() == null) {
 				JOptionPane.showMessageDialog(Details, "Veuillez entrer toutes les valeurs !");
 			}
 			// Sinon, change le panneau du l'onglet
@@ -428,7 +437,7 @@ public class ClientRes extends JFrame {
 		// Panel Trois bouton Next
 		BtnReserv.addActionListener((ActionEvent e) -> {
 			// Affichage de la boîte de dialogue indiquant que la réservation est réussie
-			JOptionPane.showMessageDialog(Details, "Vous avez reservé " + ReservNom + " Pour ₹"
+			JOptionPane.showMessageDialog(Details, "Vous avez reservé " + ReservNom + " Pour €"
 					+ totalPrixLabel.getText() + "!\n Regarder votre boîte mail pour avoir le reçu !");
 			// Appel du cadre de réservation
 			HotelRes ResInstance = new HotelRes();
@@ -436,10 +445,27 @@ public class ClientRes extends JFrame {
 			Details.setVisible(false);
 		});
 
+
 		// Définition de l'option des détails de la réservation
 		Details.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Details.setLayout(null);
 		Details.setVisible(true);
 		Details.setLocationRelativeTo(null);
+
+/*
+			// Genre genre = (Genre) Genre.getSelectedItem();
+			 String Nom = lastNameField.getText();
+			 String Prenom = firstNameField.getText();
+			 String cno = cnoField.getText();
+			 String age = ageField.getText();
+			 String adresse = addressTexteChamps.getText();
+			 
+			 controller.saveZakaznik(lastNameField, firstNameField, cnoField, ageField, addressTexteChamps);
+			
+			 JOptionPane.showMessageDialog(this, "Zclient", "SUCESS", JOptionPane.INFORMATION_MESSAGE);
+		 
+*/
+
 	}
+
 }

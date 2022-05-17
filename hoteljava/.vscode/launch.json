@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Picker",
+            "request": "launch",
+            "mainClass": "MVC.controller.Picker",
+            "projectName": "hoteljava_4e803e62"
+        },
+        {
+            "type": "java",
             "name": "Launch AdminRes",
             "request": "launch",
             "mainClass": "MVC.vue.AdminRes",

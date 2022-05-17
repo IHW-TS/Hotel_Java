@@ -63,12 +63,13 @@ public class Chambre {
         this.hotel = hotel;
     }
 
+
 /*
      // Check si la chambre existe 
-    static boolean ChambreExist(int roomNumber, Hotel hotel) {
+    static boolean ChambreExist(int num, Hotel hotel) {
         boolean exists = false;
         for (Chambre room : hotel.getlistChambre()) {
-            if (room.getNumero() == roomNumber) {
+            if (room.getNumero() == num) {
                 exists = true;
                 break;
             }
@@ -77,9 +78,9 @@ public class Chambre {
     }
 
     // Suprime une chambre existante 
-    static void deleteChambre(Hotel hotel, int roomNumber) {
+    static void deleteChambre(Hotel hotel, int num) {
         for (Chambre room : hotel.getlistChambre()) {
-            if (room.getNumero() == roomNumber) {
+            if (room.getNumero() == num) {
                 hotel.deleteChambre(room);
                 break;
             }

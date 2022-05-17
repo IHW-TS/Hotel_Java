@@ -1,3 +1,4 @@
+import MVC.vue.AdminChambre;
 import MVC.vue.AdminPage;
 import MVC.vue.AdminRes;
 
@@ -10,13 +11,12 @@ import MVC.vue.PageAccueil;
 public class App {
 	public static void main(String[] args) throws Exception {
 		
+		//new AdminPage();
 		//new HotelRes();
-		//new ClientRes();
-	//new AdminPage();
-	
+	    //new AdminPage();
 		new PageAccueil();
-		//Admin myAdmin = new Admin();
-		//Client myClient = new Client();
+		//new AdminChambre();
+
 		
 	}
 }

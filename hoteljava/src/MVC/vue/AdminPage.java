@@ -18,9 +18,10 @@ public class AdminPage extends JFrame implements ActionListener {
 
 	private JPanel mainPanel = new JPanel();
 
-	private JButton ModifyClient = new JButton("Mettre à jour les Clients");
-	private JButton CheckChambre = new JButton("Liste Réservation");
-	private JButton CheckReserv = new JButton("Réservation");
+	private JButton CheckChambre = new JButton("Réservation");
+	private JButton CheckReserv = new JButton("Chambre");
+	private JButton ModifyClient = new JButton("Clients");
+
 	private JButton btnLogout = new JButton("Logout");
 
 	public AdminPage() {
@@ -32,6 +33,8 @@ public class AdminPage extends JFrame implements ActionListener {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		createGUI();
 		setMyFont();
+
+
 	}
 
 	public void setMyFont() {
@@ -71,21 +74,24 @@ public class AdminPage extends JFrame implements ActionListener {
 		btnLogout.addActionListener(this);
 
 		add(mainPanel);
+		
+
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
 		if (e.getSource() == ModifyClient) {
-			new AdminClient();
+			AdminClient view=new AdminClient();
+            view.setVisible(true);	
 
 		} else if (e.getSource() == CheckReserv) {
 			new AdminRes();
+           
 
 		} else if (e.getSource() == CheckChambre) {
-
-			new AdminChambre();
-
+			AdminChambre view=new AdminChambre();
+            view.setVisible(true);
 		} else if (e.getSource() == btnLogout) {
 			JOptionPane.showMessageDialog(AdminPage.this,
 					"J'espère que vous avez passer un bon moment sur notre application",

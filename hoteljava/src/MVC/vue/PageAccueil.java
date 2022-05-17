@@ -27,12 +27,12 @@ public class PageAccueil extends JFrame implements ActionListener {
 	}
 	public void setButton(){
 			
-			Font a = new Font("Monospaced" , Font.CENTER_BASELINE , 35); //Tout les polices sont à la meme position 
+			Font a = new Font("Monospaced" , Font.CENTER_BASELINE , 35); //Tout les polices sont à la meme taille 
 			//partie client 
 			mainPanel.add(client); //couleur du client est white/black
 			client.setForeground(Color.white);
 			client.setBackground(Color.black);
-			client.setToolTipText("Click ici, si tu es un Client !"); // text qui apparaît en @hover ( on passe la souris dessus) 
+			client.setToolTipText("Click ici, si tu es un Client !"); // texte qu& passe la souris dessus) 
 			//partie admin 
 			mainPanel.add(admin); //coleur du client est black/white
 			admin.setForeground(Color.black);
@@ -65,9 +65,7 @@ public void setBackground(){
 			}
 			catch (Exception e1) {
 				
-				e1.printStackTrace(); // outil utilisé pour gérer les exceptions (utile dans notre cas) mais aussi les erreurs
-
-                // l'intégralité de la trace de la pile est imprimée avec les numéros de ligne et les noms de clase pour identifier l'emplacement exact de l'exception
+				e1.printStackTrace(); // outil utilisé pour afficher les erreurs  avec les numéros de ligne et les noms de classe pour identifier son emplacement exact
 			}
 		}
 		if(e.getSource() == admin){

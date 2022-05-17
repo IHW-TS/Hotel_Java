@@ -25,7 +25,7 @@ public class LoginClient extends JFrame implements ActionListener {
 	private JTextField usernameInput = new JTextField(13);
 	private JPasswordField passwordInput = new JPasswordField(13);
 
-	private JButton BtnLog = new JButton("Login");
+	private JButton BtnLog = new JButton("Connection");
 	private JButton BtnAnnuler = new JButton("Annuler");
 
 	private JPanel mainPanel = new JPanel();
@@ -33,7 +33,7 @@ public class LoginClient extends JFrame implements ActionListener {
 
 	public LoginClient() throws Exception {
 
-		setTitle("Client Login");
+		setTitle("Client Connecter");
 		setSize(260, 160);
 		setLocationRelativeTo(null);
 		setVisible(true);
@@ -74,13 +74,13 @@ public class LoginClient extends JFrame implements ActionListener {
 
 				String password = new String(passwordInput.getPassword());
 
-				FileReader fileReader = new FileReader("./StaffList.txt");
+				FileReader fileReader = new FileReader("ListClient.txt");
 
 				BufferedReader bufferedReader = new BufferedReader(fileReader);
 
 				cClient.setStaffKeyInUsername(username);
 				cClient.setStaffKeyInPassword(password);
-				cClient.loginProcess();
+				cClient.LoginEvent();
 				dispose();
 
 				bufferedReader.close();

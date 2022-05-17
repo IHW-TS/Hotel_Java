@@ -67,7 +67,8 @@ public class ClientPage extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		
 		if(e.getSource() == btnReserv) {
-			new HotelRes(); // cahnger en Hotel Res
+			new HotelRes(); // changer en Hotel Res
+			dispose();
 		}
 		else if(e.getSource() == btnLogout) {
 			JOptionPane.showMessageDialog(ClientPage.this,

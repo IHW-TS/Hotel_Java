@@ -43,9 +43,9 @@ public class ClientUser {
             id = idNum;
         }
         
-        public void loginProcess() {
+        public void LoginEvent() {
             try {
-                FileReader fr = new FileReader("./StaffList.txt");
+                FileReader fr = new FileReader("./ListClient.txt");
                 BufferedReader br = new BufferedReader(fr);
                 Vector<String>element = new Vector<String>();
                 String line;
@@ -85,9 +85,9 @@ public class ClientUser {
                 
             }	
         }
-        public String searchStaff() throws IOException{
+        public String RechercherClient() throws IOException{
                 
-                FileReader fr = new FileReader("./StaffList.txt");
+                FileReader fr = new FileReader("./ListClient.txt");
                 BufferedReader br = new BufferedReader(fr);
                 Vector<String>element = new Vector<String>();
                 String line;
@@ -120,9 +120,9 @@ public class ClientUser {
                         String username = CInfo[i][0];
                         String password = CInfo[i][1];
                         
-                        line =  "Nom Client " + nom +
-                                "\nId Number: " + id +
-                                "\nPhone Number: " + phone +
+                        line =  "Nom " + nom +
+                                "\nID : " + id +
+                                "\nNumero: " + phone +
                                 "\nUsername: " + username +
                                 "\nPassword: " + password;
                     }

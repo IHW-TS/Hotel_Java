@@ -1,10 +1,10 @@
-package MVC.controller;
+package MVC.vue;
 
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class DatePicker {
+public class Calendrier {
 
     int mois = java.util.Calendar.getInstance().get(java.util.Calendar.MONTH);
     int année = java.util.Calendar.getInstance().get(java.util.Calendar.YEAR);
@@ -17,7 +17,7 @@ public class DatePicker {
 
     JButton[] bt = new JButton[49];
 
-    public DatePicker(JFrame parent) {
+    public Calendrier(JFrame parent) {
 
         d = new JDialog();
 
@@ -64,7 +64,8 @@ public class DatePicker {
 
                 mois--;
 
-                displayDate();
+                AfficheCalendrier();
+
             }
         });
         p2.add(prec);
@@ -77,7 +78,8 @@ public class DatePicker {
 
                 mois++;
 
-                displayDate();
+                AfficheCalendrier();
+            
             }
         });
         p2.add(next);
@@ -88,12 +90,12 @@ public class DatePicker {
 
         d.setLocationRelativeTo(parent);
 
-        displayDate();
+        AfficheCalendrier();
 
         d.setVisible(true);
     }
 
-    public void displayDate() {
+    public void AfficheCalendrier() {
         for (int x = 7; x < bt.length; x++)
         bt[x].setText("");
         java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd");
@@ -110,10 +112,10 @@ public class DatePicker {
         bt[x].setText("" + j);
         l.setText(sdf.format(cal.getTime()));
 
-        d.setTitle("Date Picker");
+        d.setTitle("Calendrier");
     }
 
-    public String setPickedDate() {
+    public String DateChoisit() {
 
         if (j.equals(""))
             return j;
@@ -131,7 +133,7 @@ class Picker {
 
         final JTextField text = new JTextField(20);
 
-        JButton b = new JButton("popup");
+        JButton b = new JButton("...");
 
         JPanel p = new JPanel();
         p.add(label);
@@ -146,7 +148,7 @@ class Picker {
         b.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
 
-                text.setText(new DatePicker(f).setPickedDate());
+                text.setText(new Calendrier(f).DateChoisit());
             }
         });
     }

@@ -26,23 +26,23 @@ public class LoginAdmin extends JFrame implements ActionListener {
 	private JTextField usernameInput = new JTextField(13);
 	private JPasswordField passwordInput = new JPasswordField(13); //JPasswordField n'affiche pas les caractères saisis par l'utilisateur ex: *******
 
-	private JButton BtnAnnuler = new JButton("Cancel");
-	private JButton BtnLog = new JButton("Login");
+	private JButton BtnAnnuler = new JButton("Annuler");
+	private JButton BtnLog = new JButton("Connection");
 
 	private JPanel mainPanel = new JPanel();
 	private JPanel instructionPanel = new JPanel();
 
 	public LoginAdmin() throws Exception{
 
-		setTitle("Admin Login");
+		setTitle("Admin Connection");
 		setSize(260, 160);
 		setLocationRelativeTo(null);
 		setVisible(true);
 		setResizable(false);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		createGUI();
+		ClientLog();
 	}
-	public void createGUI() {
+	public void ClientLog() {
 		mainPanel.setLayout(new FlowLayout());
 		instructionPanel.setLayout(new FlowLayout());
 
@@ -96,7 +96,7 @@ public class LoginAdmin extends JFrame implements ActionListener {
 				}
 				bufferedReader.close();
 			}catch(Exception E){
-				JOptionPane.showMessageDialog(null, "Vous n'avez pas entré les bonnes dnonnées", "ERROR",JOptionPane.ERROR_MESSAGE);	
+				JOptionPane.showMessageDialog(null, "Vous n'avez pas entré les bonnes dnonnées", "Erreur",JOptionPane.ERROR_MESSAGE);	
 			}
 		}
 		else if (e.getSource() == BtnAnnuler){

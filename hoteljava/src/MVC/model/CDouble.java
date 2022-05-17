@@ -3,13 +3,13 @@ package MVC.model;
 /**
  * 
  */
-public class Double extends Chambre {
+public class CDouble extends Chambre {
 
    
     public int dprice;
     private String dnom;
 
-    public Double(int numero, int etage, String type, Hotel hotel, String dnom, int dprice) {
+    public CDouble(int numero, int etage, String type, Hotel hotel, String dnom, int dprice) {
 
         super(numero, etage, type, hotel);
 

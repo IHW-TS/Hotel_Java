@@ -20,7 +20,6 @@ public class SuiteNormale extends Chambre {
 
     }
 
-
     public String getStnom() {
         return stnom;
     }

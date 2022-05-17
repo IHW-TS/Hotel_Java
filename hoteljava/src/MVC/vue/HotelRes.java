@@ -9,7 +9,7 @@ public class HotelRes {
     public HotelRes() {
         // Création des conteneurs
 
-        JButton btnDeco = new JButton("Déconnecter"); // creation bouton deco 
+        JButton btnDeco = new JButton("Déconnecter"); // creation bouton deco
 
         JFrame BlockReserv = new JFrame("Hotel");// creation de la fenêtre
         BlockReserv.setSize(400, 400); // Dimension de la fenêtre
@@ -28,14 +28,15 @@ public class HotelRes {
          * 
          */
 
-        // Création d'une barre de menu pour le profil utilisateur, avec un menu "Déconnexion"
+        // Création d'une barre de menu pour le profil utilisateur, avec un menu
+        // "Déconnexion"
         JMenuBar menuBar = new JMenuBar();
         JMenu menu = new JMenu("Interface Client");
-        menuBar.add(menu); // ajouter de l'indication interface client dans le %enu en haut 
-        BlockReserv.setJMenuBar(menuBar); //block du MenuBar
-        menuBar.setBackground(new java.awt.Color(30, 80, 250)); // choix couleur en rgb 
+        menuBar.add(menu); // ajouter de l'indication interface client dans le %enu en haut
+        BlockReserv.setJMenuBar(menuBar); // block du MenuBar
+        menuBar.setBackground(new java.awt.Color(30, 80, 250)); // choix couleur en rgb
         menu.setForeground(Color.white); // couleur du texte
-        
+
         // Hotel 1 Panel
         JPanel PanelHotel = new JPanel();
         PanelHotel.setBounds(40, 80, 300, 100);
@@ -74,13 +75,13 @@ public class HotelRes {
             BlockReserv.setVisible(false);
         });
 
-        // bouton Deconnection 
+        // bouton Deconnection
         BlockReserv.add(btnDeco);
-		
-		btnDeco.setBounds(125,250,150,40);  
-		btnDeco.setForeground(Color.white); 
-		btnDeco.setBackground(Color.darkGray); 
-        // boite dialogue 
+
+        btnDeco.setBounds(125, 250, 150, 40);
+        btnDeco.setForeground(Color.white);
+        btnDeco.setBackground(Color.BLUE);
+        // boite dialogue
         btnDeco.addActionListener((ActionEvent e) -> {
             JOptionPane.showMessageDialog(BlockReserv,
                     "Vous vous êtes deconnecter! \nVeuillez vous enregistrer pour continuer !");
@@ -89,7 +90,6 @@ public class HotelRes {
             // Fermeture du cadre de réservation
             BlockReserv.setVisible(false);
         });
-
 
         // Paramétrage des options du cadre de réservation
         BlockReserv.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
