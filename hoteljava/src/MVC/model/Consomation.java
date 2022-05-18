@@ -11,7 +11,7 @@ public class Consomation {
     /**
      * 
      */
- 
+
     public Consomation(int sandwich, int coca, int eau, int chips, Sejour sej) {
         this.sandwich = sandwich;
         this.coca = coca;

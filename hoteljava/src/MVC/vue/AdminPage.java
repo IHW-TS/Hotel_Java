@@ -17,7 +17,6 @@ public class AdminPage extends JFrame implements ActionListener {
 	private JLabel lab = new JLabel("Vous êtes dans l'interface Admin");
 
 	private JPanel mainPanel = new JPanel();
-
 	private JButton CheckChambre = new JButton("Chambre");
 	private JButton CheckReserv = new JButton("Reservation");
 	private JButton ModifyClient = new JButton("Clients");

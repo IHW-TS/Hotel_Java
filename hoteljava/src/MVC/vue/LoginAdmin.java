@@ -20,6 +20,7 @@ import java.awt.event.ActionEvent;
 public class LoginAdmin extends JFrame implements ActionListener {
 	// création des différents boutons et espaces pour rentrer les informations
 	// demandées
+	//création des différents boutons et espaces pour rentrer les informations demandées
 	private JLabel lblusername = new JLabel("Username");
 	private JLabel lblpassword = new JLabel("Password");
 	private JLabel Msg = new JLabel("Veuillez vous connecter (Admin)");
@@ -34,8 +35,9 @@ public class LoginAdmin extends JFrame implements ActionListener {
 	private JPanel mainPanel = new JPanel();
 	private JPanel instructionPanel = new JPanel();
 
-	public LoginAdmin() throws Exception {
 
+	public LoginAdmin() throws Exception{
+		
 		setTitle("Admin Connexion");
 		setSize(260, 160);
 		setLocationRelativeTo(null);
@@ -46,7 +48,8 @@ public class LoginAdmin extends JFrame implements ActionListener {
 	}
 
 	public void ClientLog() {
-		// Valider la connexion du client
+
+		//Valider la connexion du clien
 		mainPanel.setLayout(new FlowLayout());
 		instructionPanel.setLayout(new FlowLayout());
 
@@ -100,9 +103,9 @@ public class LoginAdmin extends JFrame implements ActionListener {
 					}
 				}
 				bufferedReader.close();
-			} catch (Exception E) {
-				JOptionPane.showMessageDialog(null, "Vous n'avez pas entré les bonnes données", "Erreur",
-						JOptionPane.ERROR_MESSAGE);
+
+			}catch(Exception E){
+				JOptionPane.showMessageDialog(null, "Vous n'avez pas entré les bonnes données", "Erreur",JOptionPane.ERROR_MESSAGE);	
 			}
 		} else if (e.getSource() == BtnAnnuler) {
 			dispose();

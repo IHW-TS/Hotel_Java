@@ -13,9 +13,9 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-public class ClientPage extends JFrame implements ActionListener {
-	//menu client pour choisir de réserver ou se déconnecter
 
+public class ClientPage extends JFrame implements ActionListener{
+	//menu client pour choisir de réserver ou se déconnecter
 	JLabel lab = new JLabel("Vous êtes enregistré en temps que client");
 	JPanel mainPanel = new JPanel();
 	JButton btnReserv = new JButton("Reserver");

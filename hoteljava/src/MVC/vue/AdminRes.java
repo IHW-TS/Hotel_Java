@@ -18,15 +18,16 @@ import MVC.model.Reservation;
 
 public class AdminRes implements ActionListener {
 
-    String[] header = { "ID", "Prenom", "Nom", "Numero", "Date", "TempsSej" };
+
+    String[] header = {"Prenom","Nom","Numero", "Date","TempsSej","Autre"};
     JFrame frame = new JFrame("Hotel Reservation Systeme");
     JLabel descriptions = new JLabel("Reservation details: ");
     JButton registerbutton = new JButton("Nouveau Client");
     JButton backbutton = new JButton("Retour");
     static JTable reservations = new JTable();
+    private static Scanner z;
     private JTable table;
 
-    private static Scanner z;
 
     public AdminRes() {
 
