@@ -15,7 +15,7 @@ public class ClientUser {
 
 
         
-        File file = new File("./StaffList.txt");
+        File file = new File("./ListClient.txt");
         private String username, password, id;
         private boolean found = false;
         
@@ -70,15 +70,15 @@ public class ClientUser {
                     if(username.equals(id[i][0]) && password.equals(id[i][1])) {
                         found = true;
                         JOptionPane.showMessageDialog(null,
-                                "Vous avez réussit à vous enregistrer en tant que client !",
-                                "Enregistrement Réussit",
+                                "Vous avez reussit à vous enregistrer en tant que client !",
+                                "Enregistrement Reussit",
                                 JOptionPane.PLAIN_MESSAGE);
                         new ClientPage();
                     }
                 }
                 if(found ==false) {
                     JOptionPane.showMessageDialog(null,
-                            "Identifiant invalide", "Enregistrement échoué", JOptionPane.ERROR_MESSAGE);	
+                            "Identifiant invalide", "Enregistrement échoue", JOptionPane.ERROR_MESSAGE);	
                 }
                 br.close();
             } catch(IOException e) {

@@ -4,18 +4,10 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
 
-/*
-
-if (a.getSource()==bGoDate){
-	final JFrame f = new JFrame();
-	depdate.setText(new DatePicker(f).setPickedDate());
-} 
-if (a.getSource()==bturnDate){
-	final JFrame f = new JFrame();
-	retdate.setText(new DatePicker(f).setPickedDate());
-
-*/
 public class ClientRes extends JFrame {
+
+	private JTextField DateDebut;
+	private JLabel[] label = new JLabel[20];
 
 	public ClientRes(String ReservNom, String ReservPrix) {
 
@@ -69,10 +61,7 @@ public class ClientRes extends JFrame {
 
 		// Creation d'un menu deroulant pour choisir les types de chambre
 
-
-
-
-		JComboBox t1 = new JComboBox();
+		JComboBox t1 = new JComboBox();  // type de chambre changer en suite double SP SN avec un controlleur mais impossible de retrouver l'ancien ficher donc a refaire 
 		t1.addItem("1");
 		t1.addItem("2");
 		t1.addItem("3");
@@ -92,22 +81,22 @@ public class ClientRes extends JFrame {
 		t2.addItem("3");
 		t2.addItem("4 ou +");
 		t2.setSelectedItem(1);
-		t2.setBounds(300, 60, 120, 30);
+		t2.setBounds(220, 60, 120, 30);
 		p1.add(t2);
 
 		JLabel Ljours = new JLabel("Entrer La duree du Sejour :");
-        Ljours.setBounds(10, 110, 250, 30);
-        p1.add(Ljours);
+		Ljours.setBounds(10, 110, 250, 30);
+		p1.add(Ljours);
 
-        JButton prevBtn10 = new JButton("Selectionner date depart");
-        prevBtn10.setBounds(200, 110, 180, 30);
-        p1.add(prevBtn10);
-        prevBtn10.addActionListener((ActionEvent e) -> {
-            // Appel de la fonction picker dans calendrier
-            final JFrame cal = new JFrame();
-            prevBtn10.setText(new Calendrier(cal).DateChoisit());
-        
-        });
+		JButton prevBtn10 = new JButton("Selectionner date depart");
+		prevBtn10.setBounds(200, 110, 180, 30);
+		p1.add(prevBtn10);
+		prevBtn10.addActionListener((ActionEvent e) -> {
+			// Appel de la fonction picker dans calendrier
+			final JFrame cal = new JFrame();
+			prevBtn10.setText(new Calendrier(cal).DateChoisit());
+
+		});
 
 		JComboBox t3 = new JComboBox();
 		t3.addItem("1");
@@ -115,7 +104,7 @@ public class ClientRes extends JFrame {
 		t3.addItem("3");
 		t3.addItem("4");
 		t3.setSelectedItem(1);
-		t3.setBounds(220, 110, 120, 30);
+		t3.setBounds(400, 110, 120, 30);
 		p1.add(t3);
 
 		JLabel sConsommation = new JLabel("Consommation :");
@@ -195,29 +184,30 @@ public class ClientRes extends JFrame {
 		p2.add(GenderLabel);
 
 		// Creation d'un choix de bouton pour le genre
-		
+
 		JComboBox Genre = new JComboBox();
 		Genre.addItem("Homme");
 		Genre.addItem("Femme");
 		Genre.addItem("Autre");
 		Genre.setSelectedItem(1);
 		Genre.setBounds(110, 150, 120, 30);
-				p2.add(Genre);
-		
-		/*JRadioButton genre1 = new JRadioButton("Homme");
-		JRadioButton genre2 = new JRadioButton("Femme");
-		JRadioButton genre3 = new JRadioButton("Autre");
-		genre1.setBounds(60, 150, 250, 30);
-		genre2.setBounds(60, 180, 250, 30);
-		genre3.setBounds(60, 210, 250, 30);
-		ButtonGroup genderbg = new ButtonGroup();
-		genderbg.add(genre1);
-		genderbg.add(genre2);
-		genderbg.add(genre3);
-		p2.add(genre1);
-		p2.add(genre2);
-		p2.add(genre3);
-*/
+		p2.add(Genre);
+
+		/*
+		 * JRadioButton genre1 = new JRadioButton("Homme");
+		 * JRadioButton genre2 = new JRadioButton("Femme");
+		 * JRadioButton genre3 = new JRadioButton("Autre");
+		 * genre1.setBounds(60, 150, 250, 30);
+		 * genre2.setBounds(60, 180, 250, 30);
+		 * genre3.setBounds(60, 210, 250, 30);
+		 * ButtonGroup genderbg = new ButtonGroup();
+		 * genderbg.add(genre1);
+		 * genderbg.add(genre2);
+		 * genderbg.add(genre3);
+		 * p2.add(genre1);
+		 * p2.add(genre2);
+		 * p2.add(genre3);
+		 */
 		JButton prevBtn2 = new JButton("Back");
 		prevBtn2.setBounds(320, 220, 100, 30);
 		p2.add(prevBtn2);
@@ -297,7 +287,7 @@ public class ClientRes extends JFrame {
 		p3.add(itemPrixLabel);
 
 		JLabel rs1Label = new JLabel("€");
-		rs1Label.setBounds(270, 40, 250, 30);
+		rs1Label.setBounds(300, 40, 250, 30);
 		p3.add(rs1Label);
 
 		JLabel totalLabelChambrePrix = new JLabel("0");
@@ -305,7 +295,7 @@ public class ClientRes extends JFrame {
 		p3.add(totalLabelChambrePrix);
 
 		JLabel rs2Label = new JLabel("€");
-		rs2Label.setBounds(270, 60, 250, 30);
+		rs2Label.setBounds(300, 60, 250, 30);
 		p3.add(rs2Label);
 
 		JLabel totalLabelJourPrix = new JLabel("0");
@@ -313,7 +303,7 @@ public class ClientRes extends JFrame {
 		p3.add(totalLabelJourPrix);
 
 		JLabel rs3Label = new JLabel("€");
-		rs3Label.setBounds(270, 80, 250, 30);
+		rs3Label.setBounds(300, 80, 250, 30);
 		p3.add(rs3Label);
 
 		JLabel totalLabelServivePrix = new JLabel("0");
@@ -321,7 +311,7 @@ public class ClientRes extends JFrame {
 		p3.add(totalLabelServivePrix);
 
 		JLabel rs4Label = new JLabel("€");
-		rs4Label.setBounds(270, 100, 250, 30);
+		rs4Label.setBounds(300, 100, 250, 30);
 		p3.add(rs4Label);
 
 		JLabel taxPrixLabel = new JLabel("400");
@@ -329,7 +319,7 @@ public class ClientRes extends JFrame {
 		p3.add(taxPrixLabel);
 
 		JLabel rs5Label = new JLabel("€");
-		rs5Label.setBounds(270, 120, 250, 30);
+		rs5Label.setBounds(300, 120, 250, 30);
 		p3.add(rs5Label);
 
 		JLabel maintainenceCostLabel = new JLabel("200");
@@ -337,7 +327,7 @@ public class ClientRes extends JFrame {
 		p3.add(maintainenceCostLabel);
 
 		JLabel rs6Label = new JLabel("€");
-		rs6Label.setBounds(270, 160, 250, 30);
+		rs6Label.setBounds(300, 160, 250, 30);
 		p3.add(rs6Label);
 
 		JLabel totalPrixLabel = new JLabel("0");
@@ -453,26 +443,27 @@ public class ClientRes extends JFrame {
 			Details.setVisible(false);
 		});
 
-
 		// Définition de l'option des détails de la réservation
 		Details.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Details.setLayout(null);
 		Details.setVisible(true);
 		Details.setLocationRelativeTo(null);
 
-/*
-			// Genre genre = (Genre) Genre.getSelectedItem();
-			 String Nom = lastNameField.getText();
-			 String Prenom = firstNameField.getText();
-			 String cno = cnoField.getText();
-			 String age = ageField.getText();
-			 String adresse = addressTexteChamps.getText();
-			 
-			 controller.saveZakaznik(lastNameField, firstNameField, cnoField, ageField, addressTexteChamps);
-			
-			 JOptionPane.showMessageDialog(this, "Zclient", "SUCESS", JOptionPane.INFORMATION_MESSAGE);
-		 
-*/
+		/*
+		 * // Genre genre = (Genre) Genre.getSelectedItem();
+		 * String Nom = lastNameField.getText();
+		 * String Prenom = firstNameField.getText();
+		 * String num = cnoField.getText();
+		 * String age = ageField.getText();
+		 * String adresse = addressTexteChamps.getText();
+		 * 
+		 * controller.saveClient(lastNameField, firstNameField, numField, ageField,
+		 * addressTexteChamps);
+		 * 
+		 * JOptionPane.showMessageDialog(this, "Client", "SUCESS",
+		 * JOptionPane.INFORMATION_MESSAGE);
+		 * 
+		 */
 
 	}
 

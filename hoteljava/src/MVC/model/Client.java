@@ -22,14 +22,9 @@ public class Client {
     public void setlistRes(Set<Reservation> listRes) {
         this.listRes = listRes;
     }
-/**
-     * 
-     */
-    public Client() {
-    }
+
 
     public Client(String nom, String prenom, int age, String email, int tel) {
-        super(); 
         this.nom = nom; 
         this.prenom = prenom; 
         this.age = age;

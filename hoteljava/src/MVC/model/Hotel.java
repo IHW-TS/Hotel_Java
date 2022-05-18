@@ -14,17 +14,17 @@ public class Hotel {
     public int nb_chambre_disponible;
     public ArrayList<Chambre> arr = new ArrayList<Chambre>();
 
-/*
-    public Set<Chambre> listChambre = new HashSet<Chambre>();
-
-    public Set<Chambre> getlistChambre() {
-        return listChambre;
-    }
-
-    public void setlistChambre(Set<Chambre> listChambre) {
-        this.listChambre = listChambre;
-    }*/
-
+    /*
+     * public Set<Chambre> listChambre = new HashSet<Chambre>();
+     * 
+     * public Set<Chambre> getlistChambre() {
+     * return listChambre;
+     * }
+     * 
+     * public void setlistChambre(Set<Chambre> listChambre) {
+     * this.listChambre = listChambre;
+     * }
+     */
 
     public Hotel(int nb_chambre, int nb_etage, int nb_chambre_disponible) {
 
@@ -58,7 +58,6 @@ public class Hotel {
         this.nb_chambre_disponible = nb_chambre_disponible;
     }
 
-
     public void addRoom(Simple simple) {
         for (var x : arr) {
             if (x.equals(simple))
@@ -66,6 +65,7 @@ public class Hotel {
         }
         arr.add(simple);
     }
+
     public void addRoom(CDouble ddouble) {
         for (var x : arr) {
             if (x.equals(ddouble))
@@ -73,6 +73,7 @@ public class Hotel {
         }
         arr.add(ddouble);
     }
+
     public void addRoom(SuiteNormale sn) {
         for (var x : arr) {
             if (x.equals(sn))
@@ -80,6 +81,7 @@ public class Hotel {
         }
         arr.add(sn);
     }
+
     public void addRoom(SuitePresidentiel sp) {
         for (var x : arr) {
             if (x.equals(sp))
@@ -145,5 +147,3 @@ public class Hotel {
         }
     }
 }
-
-

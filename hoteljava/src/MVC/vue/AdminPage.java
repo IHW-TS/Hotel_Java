@@ -18,8 +18,8 @@ public class AdminPage extends JFrame implements ActionListener {
 
 	private JPanel mainPanel = new JPanel();
 
-	private JButton CheckChambre = new JButton("Réservation");
-	private JButton CheckReserv = new JButton("Chambre");
+	private JButton CheckChambre = new JButton("Chambre");
+	private JButton CheckReserv = new JButton("Reservation");
 	private JButton ModifyClient = new JButton("Clients");
 
 	private JButton btnLogout = new JButton("Logout");
@@ -84,14 +84,17 @@ public class AdminPage extends JFrame implements ActionListener {
 		if (e.getSource() == ModifyClient) {
 			AdminClient view=new AdminClient();
             view.setVisible(true);	
+			dispose();
 
 		} else if (e.getSource() == CheckReserv) {
 			new AdminRes();
-           
+			dispose();
 
 		} else if (e.getSource() == CheckChambre) {
 			AdminChambre view=new AdminChambre();
             view.setVisible(true);
+			dispose();
+
 		} else if (e.getSource() == btnLogout) {
 			JOptionPane.showMessageDialog(AdminPage.this,
 					"J'espère que vous avez passer un bon moment sur notre application",

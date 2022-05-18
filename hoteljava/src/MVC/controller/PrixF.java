@@ -15,7 +15,7 @@ public class PrixF {
 	public double getPrice(String place) {
 		double myPrice = 0.0;
 		
-		File file = new File("patternplace.txt");
+		File file = new File("Prix.txt");
 		try {
 			FileReader fr = new FileReader(file);
 			BufferedReader br = new BufferedReader(fr);

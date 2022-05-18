@@ -16,9 +16,9 @@ public class GchambreStatique extends AbstractTableModel{
     
 	public GchambreStatique() {
 		super();
-	                reservations.add(new Reservation ("Johnathan", "Sykes","chambre double", "25/03/23"));
-	                reservations.add(new Reservation ("Nicolas", "Van de Kampf", "chambre simple", "9/07/23"));
-	                reservations.add(new Reservation ("Damien", "Cuthbert", "Chambre présidentielle", "15/08/23"));
+	      //          reservations.add(new Reservation ("Johnathan", "Sykes","chambre double", "25/03/23"));
+	       //         reservations.add(new Reservation ("Nicolas", "Van de Kampf", "chambre simple", "9/07/23"));
+	       //         reservations.add(new Reservation ("Damien", "Cuthbert", "Chambre présidentielle", "15/08/23"));
 	  
 	}
 	

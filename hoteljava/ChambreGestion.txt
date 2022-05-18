@@ -1,0 +1,12 @@
+10#SuitePresidentiel
+11#SuitePresidentiel
+12#SuitePresidentiel
+20#SuiteNormale
+21#SuiteNormale
+22#SuiteNormale
+31#Simple
+32#Simple
+33#Simple
+41#Double
+42#Double
+43#Double

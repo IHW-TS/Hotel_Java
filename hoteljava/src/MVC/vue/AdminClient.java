@@ -37,8 +37,8 @@ public class AdminClient extends JFrame {
 
     JLabel csDetails = new JLabel("Details Client");
     csDetails.setFont(mainLabel);
-    csDetails.setForeground(Color.WHITE);
-    csDetails.setBounds(150, 5, 300, 30);
+    csDetails.setForeground(Color.BLACK);
+    csDetails.setBounds(170, 5, 300, 30);
     contentPanel.add(csDetails);
 
     JScrollPane scrollPane = new JScrollPane();
@@ -47,7 +47,7 @@ public class AdminClient extends JFrame {
 
     table = new JTable();
     table.setModel(new DefaultTableModel(new Object[][] {},
-    new String[] { "ID", "Nom", "Numero", "Date Début", "Durée" }));
+    new String[] { "ID", "Nom", "Numero", "Mail", "Adresse" }));
     scrollPane.setViewportView(table);
     controller.setTabel();
 
@@ -56,7 +56,7 @@ public class AdminClient extends JFrame {
     contentPanel.add(mainMenu);
 /*
     JLabel background = new JLabel("");
-    background.setIcon(new ImageIcon("all.jpg"));
+    background.setIcon(new img("all.jpg"));
     background.setBounds(0, 0, 605, 354);
     contentPanel.add(background);
 */
@@ -65,7 +65,7 @@ public class AdminClient extends JFrame {
 
   public void setTable() {
     table.setModel(new DefaultTableModel(new Object[][] {},
-        new String[] { "ID", "Nom", "Numero", "Date Début", "Durée" }));
+        new String[] { "ID", "Nom", "Numero", "Mail", "Adresse" }));
   }
 
   public JTable getTable() {

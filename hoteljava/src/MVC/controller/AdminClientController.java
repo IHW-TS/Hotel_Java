@@ -11,30 +11,27 @@ import MVC.model.ClientInfo;
 import MVC.vue.AdminClient;
 import MVC.vue.AdminPage;
 
-public class AdminClientController implements ActionListener{
-    
+public class AdminClientController implements ActionListener {
+
     private AdminClient Aclient;
-    
+
     public AdminClientController(AdminClient customerView) {
         Aclient = customerView;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        AdminPage panel=new AdminPage();
+        AdminPage panel = new AdminPage();
         panel.setVisible(true);
         Aclient.dispose();
     }
-    
+
     public void setTabel() {
-        ArrayList<Client> arr= ClientInfo.getClients();
+        ArrayList<Client> arr = ClientInfo.getClients();
         Aclient.setTable();
         DefaultTableModel model = (DefaultTableModel) Aclient.getTable().getModel();
-        for(var x:arr)
-            model.addRow(new Object[]{x.getPrenom(),x.getNom(),x.getAge(),x.getEmail(),x.getTel()});
+        for (var x : arr)
+            model.addRow(new Object[] { x.getPrenom(), x.getNom(), x.getAge(), x.getEmail(), x.getTel() });
     }
 
 }
-
-
-

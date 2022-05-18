@@ -13,13 +13,9 @@ public class Sejour {
     /**
      * 
      */
-    public Sejour() {
-
-    }
-
+ 
     public Sejour(int prix_chambre, int prix_minibar, String date_debut, String date_fin, Reservation res,
             Consomation cons) {
-        super();
         this.prix_chambre = prix_chambre;
         this.prix_minibar = prix_minibar;
         this.date_debut = date_debut;

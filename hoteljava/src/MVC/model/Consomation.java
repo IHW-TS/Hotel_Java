@@ -1,7 +1,7 @@
 package MVC.model;
 
 public class Consomation {
-
+    //crée les variables
     public int sandwich;
     public int coca;
     public int eau;
@@ -11,11 +11,8 @@ public class Consomation {
     /**
      * 
      */
-    public Consomation() {
-    }
-
+ 
     public Consomation(int sandwich, int coca, int eau, int chips, Sejour sej) {
-        super();
         this.sandwich = sandwich;
         this.coca = coca;
         this.eau = eau;

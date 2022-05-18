@@ -37,11 +37,11 @@ public class Calendrier {
 
             bt[x].setFocusPainted(false);
 
-            bt[x].setBackground(Color.white); 
+            bt[x].setBackground(Color.white);
 
             if (x > 6)
 
-            bt[x].addActionListener(new ActionListener() {
+                bt[x].addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent ae) {
                         j = bt[selection].getActionCommand();
 
@@ -79,7 +79,7 @@ public class Calendrier {
                 mois++;
 
                 AfficheCalendrier();
-            
+
             }
         });
         p2.add(next);
@@ -97,7 +97,7 @@ public class Calendrier {
 
     public void AfficheCalendrier() {
         for (int x = 7; x < bt.length; x++)
-        bt[x].setText("");
+            bt[x].setText("");
         java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd");
 
         java.util.Calendar cal = java.util.Calendar.getInstance();
@@ -109,7 +109,7 @@ public class Calendrier {
 
         for (int x = 6 + JourW, j = 1; j <= JourM; x++, j++)
 
-        bt[x].setText("" + j);
+            bt[x].setText("" + j);
         l.setText(sdf.format(cal.getTime()));
 
         d.setTitle("Calendrier");

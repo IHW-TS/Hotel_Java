@@ -34,7 +34,7 @@ public class AdminReservController implements ActionListener{
         DefaultTableModel model = (DefaultTableModel) Areserv.getTable().getModel();
         for(var x:arr)
             model.addRow(new Object[]{x.getPrenom(),x.getNom(),x.getAge(),x.getEmail(),x.getTel()});
-    }
+    } //"ID","Prenom","Nom","Numero", "Date","TempsSej"
 
 }
 

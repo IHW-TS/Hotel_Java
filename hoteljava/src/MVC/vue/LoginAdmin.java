@@ -18,23 +18,25 @@ import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 
 public class LoginAdmin extends JFrame implements ActionListener {
-
+	// création des différents boutons et espaces pour rentrer les informations
+	// demandées
 	private JLabel lblusername = new JLabel("Username");
 	private JLabel lblpassword = new JLabel("Password");
 	private JLabel Msg = new JLabel("Veuillez vous connecter (Admin)");
 
 	private JTextField usernameInput = new JTextField(13);
-	private JPasswordField passwordInput = new JPasswordField(13); //JPasswordField n'affiche pas les caractères saisis par l'utilisateur ex: *******
+	private JPasswordField passwordInput = new JPasswordField(13); // JPasswordField n'affiche pas les caractères saisis
+																	// par l'utilisateur ex: *******
 
 	private JButton BtnAnnuler = new JButton("Annuler");
-	private JButton BtnLog = new JButton("Connection");
+	private JButton BtnLog = new JButton("Connexion");
 
 	private JPanel mainPanel = new JPanel();
 	private JPanel instructionPanel = new JPanel();
 
-	public LoginAdmin() throws Exception{
+	public LoginAdmin() throws Exception {
 
-		setTitle("Admin Connection");
+		setTitle("Admin Connexion");
 		setSize(260, 160);
 		setLocationRelativeTo(null);
 		setVisible(true);
@@ -42,7 +44,9 @@ public class LoginAdmin extends JFrame implements ActionListener {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		ClientLog();
 	}
+
 	public void ClientLog() {
+		// Valider la connexion du client
 		mainPanel.setLayout(new FlowLayout());
 		instructionPanel.setLayout(new FlowLayout());
 
@@ -60,10 +64,11 @@ public class LoginAdmin extends JFrame implements ActionListener {
 		BtnAnnuler.addActionListener(this);
 		add(mainPanel);
 	}
+
 	public void actionPerformed(ActionEvent e) {
 		User myUser = new User();
 
-		if(e.getSource() == BtnLog){
+		if (e.getSource() == BtnLog) {
 			try {
 				AdminUser myAdmin = new AdminUser();
 
@@ -75,8 +80,9 @@ public class LoginAdmin extends JFrame implements ActionListener {
 				FileReader fileReader = new FileReader("Admin.txt");
 				BufferedReader bufferedReader = new BufferedReader(fileReader);
 
-				while((bufferedReader.readLine()) != null) {
-					if(myUser.getUsername().equals(myAdmin.getAdminName()) && myUser.getPassword().equals(myAdmin.getAdminPassword())) {
+				while ((bufferedReader.readLine()) != null) {
+					if (myUser.getUsername().equals(myAdmin.getAdminName())
+							&& myUser.getPassword().equals(myAdmin.getAdminPassword())) {
 						dispose();
 						JOptionPane.showMessageDialog(LoginAdmin.this,
 								"Vous avez reussit à vous enregistrer en temps qu'Admin.",
@@ -84,8 +90,7 @@ public class LoginAdmin extends JFrame implements ActionListener {
 								JOptionPane.PLAIN_MESSAGE);
 						dispose();
 						new AdminPage();
-					}
-					else {
+					} else {
 						JOptionPane.showMessageDialog(LoginAdmin.this,
 								"Identifiant invalide",
 								"L'enregistrement a échoué",
@@ -95,11 +100,11 @@ public class LoginAdmin extends JFrame implements ActionListener {
 					}
 				}
 				bufferedReader.close();
-			}catch(Exception E){
-				JOptionPane.showMessageDialog(null, "Vous n'avez pas entré les bonnes dnonnées", "Erreur",JOptionPane.ERROR_MESSAGE);	
+			} catch (Exception E) {
+				JOptionPane.showMessageDialog(null, "Vous n'avez pas entré les bonnes données", "Erreur",
+						JOptionPane.ERROR_MESSAGE);
 			}
-		}
-		else if (e.getSource() == BtnAnnuler){
+		} else if (e.getSource() == BtnAnnuler) {
 			dispose();
 		}
 	}

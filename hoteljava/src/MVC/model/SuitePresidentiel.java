@@ -1,12 +1,11 @@
 package MVC.model;
 
-
 public class SuitePresidentiel extends Chambre {
 
     /**
      * Default constructor
      */
-    
+
     public int spprice;
     private String spnom;
 
@@ -19,12 +18,11 @@ public class SuitePresidentiel extends Chambre {
 
     }
 
-
     public String getSpnom() {
         return spnom;
     }
 
-    public void setSpnom (String spnom) {
+    public void setSpnom(String spnom) {
         this.spnom = spnom;
     }
 
