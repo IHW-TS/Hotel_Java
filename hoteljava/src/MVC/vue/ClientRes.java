@@ -175,6 +175,14 @@ public class ClientRes extends JFrame {
 		p2.add(addressLabel);
 		JTextArea addressTexteChamps = new JTextArea();
 
+		JLabel EmailLabel = new JLabel("Mail :");
+		EmailLabel.setBounds(280, 80, 250, 30);
+		p2.add(EmailLabel);
+		
+		JTextField EmailField = new JTextField();
+		EmailField.setBounds(380, 80, 150, 30);
+		p2.add(EmailField);
+
 		// partie Adresse + option pour scroller
 		addressTexteChamps.setLineWrap(true);
 		addressTexteChamps.setWrapStyleWord(true);
