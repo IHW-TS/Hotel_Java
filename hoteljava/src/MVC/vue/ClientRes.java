@@ -94,7 +94,7 @@ public class ClientRes extends JFrame {
 		t2.setSelectedItem(1);
 		t2.setBounds(300, 60, 120, 30);
 		p1.add(t2);
-
+	//création d'un bouton pour afficher un calendrier
 		JLabel Ljours = new JLabel("Entrer La duree du Sejour :");
         Ljours.setBounds(10, 110, 250, 30);
         p1.add(Ljours);
@@ -108,7 +108,7 @@ public class ClientRes extends JFrame {
             prevBtn10.setText(new Calendrier(cal).DateChoisit());
         
         });
-
+	//création d'un menu déroulant pour choisir la durée du sejour
 		JComboBox t3 = new JComboBox();
 		t3.addItem("1");
 		t3.addItem("2");
@@ -117,7 +117,7 @@ public class ClientRes extends JFrame {
 		t3.setSelectedItem(1);
 		t3.setBounds(220, 110, 120, 30);
 		p1.add(t3);
-
+	//Création de la partie consommation avec le choix des produits
 		JLabel sConsommation = new JLabel("Consommation :");
 		sConsommation.setBounds(10, 140, 250, 40);
 		p1.add(sConsommation);
@@ -137,7 +137,7 @@ public class ClientRes extends JFrame {
 		JCheckBox sChips = new JCheckBox("Chips");
 		sChips.setBounds(10, 230, 200, 20);
 		p1.add(sChips);
-
+	//création du bouton pour passer à la page suivante
 		JButton nextBtn1 = new JButton("Next");
 		nextBtn1.setBounds(430, 220, 100, 30);
 		p1.add(nextBtn1);
@@ -145,6 +145,7 @@ public class ClientRes extends JFrame {
 		nextBtn1.setForeground(Color.white);
 
 		// Client panel 2
+		//création des différentes informations à donner et des espaces pour les rentrer
 		JLabel firstNameLabel = new JLabel("Prenom:");
 		firstNameLabel.setBounds(10, 10, 250, 30);
 		p2.add(firstNameLabel);
@@ -235,7 +236,7 @@ public class ClientRes extends JFrame {
 		nextBtn2.setForeground(Color.white);
 
 		// Panel 3 affichage partie gauche
-
+		//affichage des informations rentrées et du prix 
 		JLabel itemLabel = new JLabel("Les Items");
 		itemLabel.setBounds(40, 10, 250, 30);
 		p3.add(itemLabel);
