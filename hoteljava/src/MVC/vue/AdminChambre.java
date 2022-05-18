@@ -91,7 +91,7 @@ public class AdminChambre extends JFrame {
         supr.setBounds(20, 220, 117, 20);
         contentPane.add(supr);
 
-        main = new JButton("Acceuil Adm");
+        main = new JButton("Accueil Adm");
         main.setBounds(20, 250, 115, 20);
         contentPane.add(main);
 

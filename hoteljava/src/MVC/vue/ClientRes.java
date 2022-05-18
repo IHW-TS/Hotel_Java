@@ -68,6 +68,10 @@ public class ClientRes extends JFrame {
 		p1.add(lChambre);
 
 		// Creation d'un menu deroulant pour choisir les types de chambre
+
+
+
+
 		JComboBox t1 = new JComboBox();
 		t1.addItem("1");
 		t1.addItem("2");
@@ -88,18 +92,22 @@ public class ClientRes extends JFrame {
 		t2.addItem("3");
 		t2.addItem("4 ou +");
 		t2.setSelectedItem(1);
-		t2.setBounds(220, 60, 120, 30);
+		t2.setBounds(300, 60, 120, 30);
 		p1.add(t2);
 
-		JLabel Ljours = new JLabel("Entrer La durée du Sejour :");
-		Ljours.setBounds(10, 110, 250, 30);
-		p1.add(Ljours);
+		JLabel Ljours = new JLabel("Entrer La duree du Sejour :");
+        Ljours.setBounds(10, 110, 250, 30);
+        p1.add(Ljours);
 
-		 /*
-		 * 
-		 * Date importer Date Picker
-		 * 
-		 */
+        JButton prevBtn10 = new JButton("Selectionner date depart");
+        prevBtn10.setBounds(200, 110, 180, 30);
+        p1.add(prevBtn10);
+        prevBtn10.addActionListener((ActionEvent e) -> {
+            // Appel de la fonction picker dans calendrier
+            final JFrame cal = new JFrame();
+            prevBtn10.setText(new Calendrier(cal).DateChoisit());
+        
+        });
 
 		JComboBox t3 = new JComboBox();
 		t3.addItem("1");

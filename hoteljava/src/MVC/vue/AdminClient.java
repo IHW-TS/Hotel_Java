@@ -65,7 +65,7 @@ public class AdminClient extends JFrame {
 
   public void setTable() {
     table.setModel(new DefaultTableModel(new Object[][] {},
-        new String[] { "ID No", "Name", "Phone No", "Duration", "No of Peoples" }));
+        new String[] { "ID", "Nom", "Numero", "Date Début", "Durée" }));
   }
 
   public JTable getTable() {

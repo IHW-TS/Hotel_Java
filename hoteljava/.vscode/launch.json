@@ -8,6 +8,13 @@
             "type": "java",
             "name": "Launch Picker",
             "request": "launch",
+            "mainClass": "MVC.vue.Picker",
+            "projectName": "hoteljava_4e803e62"
+        },
+        {
+            "type": "java",
+            "name": "Launch Picker",
+            "request": "launch",
             "mainClass": "MVC.controller.Picker",
             "projectName": "hoteljava_4e803e62"
         },

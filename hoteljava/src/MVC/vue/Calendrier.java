@@ -127,7 +127,7 @@ public class Calendrier {
 }
 
 class Picker {
-    public static void main(String[] args) {// main method
+    public static void main(String[] args) {// main methode
 
         JLabel label = new JLabel("Selectionner une date :");
 
