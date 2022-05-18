@@ -4,7 +4,7 @@ package MVC.model;
 import java.util.*;
 
 public class Chambre {
-
+    //crée les différentes variables
     public int numero;
     public int etage;
     public String type;
@@ -22,7 +22,7 @@ public class Chambre {
     /**
      * 
      */
-
+    //crée les données de chambre
     public Chambre(int numero, int etage, String type, Hotel hotel) {
         this.numero = numero;
         this.etage = etage;
