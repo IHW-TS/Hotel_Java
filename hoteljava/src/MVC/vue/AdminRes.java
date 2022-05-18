@@ -15,7 +15,7 @@ import MVC.controller.AdminReservController;
 import MVC.model.Reservation;
 
 public class AdminRes extends JFrame implements ActionListener {
-
+    //créer la page de gestion des clients pour l'administration lié à leur numéro de réservation
     JFrame frame = new JFrame("Restaurant Reservation System");
     
     JButton registerbutton = new JButton("New User");
