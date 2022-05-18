@@ -18,7 +18,7 @@ import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 
 public class LoginAdmin extends JFrame implements ActionListener {
-
+	//création des différents boutons et espaces pour rentrer les informations demandées
 	private JLabel lblusername = new JLabel("Username");
 	private JLabel lblpassword = new JLabel("Password");
 	private JLabel Msg = new JLabel("Veuillez vous connecter (Admin)");
@@ -27,14 +27,14 @@ public class LoginAdmin extends JFrame implements ActionListener {
 	private JPasswordField passwordInput = new JPasswordField(13); //JPasswordField n'affiche pas les caractères saisis par l'utilisateur ex: *******
 
 	private JButton BtnAnnuler = new JButton("Annuler");
-	private JButton BtnLog = new JButton("Connection");
+	private JButton BtnLog = new JButton("Connexion");
 
 	private JPanel mainPanel = new JPanel();
 	private JPanel instructionPanel = new JPanel();
 
 	public LoginAdmin() throws Exception{
-
-		setTitle("Admin Connection");
+		
+		setTitle("Admin Connexion");
 		setSize(260, 160);
 		setLocationRelativeTo(null);
 		setVisible(true);
@@ -43,6 +43,7 @@ public class LoginAdmin extends JFrame implements ActionListener {
 		ClientLog();
 	}
 	public void ClientLog() {
+		//Valider la connexion du clien
 		mainPanel.setLayout(new FlowLayout());
 		instructionPanel.setLayout(new FlowLayout());
 
@@ -96,7 +97,7 @@ public class LoginAdmin extends JFrame implements ActionListener {
 				}
 				bufferedReader.close();
 			}catch(Exception E){
-				JOptionPane.showMessageDialog(null, "Vous n'avez pas entré les bonnes dnonnées", "Erreur",JOptionPane.ERROR_MESSAGE);	
+				JOptionPane.showMessageDialog(null, "Vous n'avez pas entré les bonnes données", "Erreur",JOptionPane.ERROR_MESSAGE);	
 			}
 		}
 		else if (e.getSource() == BtnAnnuler){
